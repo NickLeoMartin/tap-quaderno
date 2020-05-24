@@ -52,12 +52,39 @@ def discover():
 
     for stream_name, schema_dict in schemas.items():
         schema = Schema.from_dict(schema_dict)
-        metadata = field_metadata[stream_name]
+        schema_metadata = field_metadata[stream_name]
+
+        # Assume id key for each stream for now...
+        key_properties = ['id']
+
+        # Selects all streams by default
+        metadata = [{
+            'metadata': {
+                    'inclusion': 'available',
+                    'table-key-properties': key_properties,
+                    'selected': True,
+                    'schema-name': stream_name
+                    },
+            'breadcrumb': []
+        }]
+
+        for prop, json_schema in schema_metadata:
+            inclusion = 'available'
+
+            if prop in key_properties:
+                inclusion = 'automatic'
+
+            metadata.append({
+                'breadcrumb': ['properties', prop],
+                'metadata': {
+                    'inclusion': inclusion
+                }
+            })
 
         catalog.streams.append(CatalogEntry(
             stream=stream_name,
             tap_stream_id=stream_name,
-            key_properties=['id'],  # TODO: rethink...
+            key_properties=key_properties,
             schema=schema,
             metadata=metadata
         ))

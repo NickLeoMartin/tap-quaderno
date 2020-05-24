@@ -3,6 +3,7 @@
 ## Supported Endpoints
 
 * Recurring
+* Items
 
 ## Unsupported Endpoints
 
@@ -12,7 +13,6 @@
 * Credits
 * Expenses
 * Estimates
-* Items
 * Payments
 * Taxes
 * Evidence

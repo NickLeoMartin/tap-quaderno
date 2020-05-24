@@ -86,7 +86,6 @@
         },
         "items": {
             "type": [
-                "null",
                 "array"
             ],
             "items": {

@@ -10,6 +10,10 @@ STEAM_CONFIGS = {
     'recurring': {
         'url_path': 'recurring.json',
         'replication': 'full'
+    },
+    'items': {
+        'url_path': 'items.json',
+        'replication': 'full'
     }
 }
 
@@ -118,11 +122,14 @@ def sync_endpoint(client, catalog, state, start_date, stream, mdata):
                                        filter_field,
                                        foreign_keys)
 
-        current_page = headers.get('X-Pages-CurrentPage')
-        if current_page < total_pages:
-            page_number += 1
-        else:
-            has_more = False
+        # Exit unless more pages exist
+        has_more = False
+        if total_pages is not None:
+            current_page = headers.get('X-Pages-CurrentPage')
+
+            if current_page < total_pages:
+                page_number += 1
+                has_more = True
 
         # if offset > 10000:
         #     paginate_datetime = max_modified

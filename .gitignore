@@ -134,3 +134,4 @@ config.json
 Makefile
 .vscode/
 catalog.json
+pipe.json

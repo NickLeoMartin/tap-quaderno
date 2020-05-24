@@ -1,0 +1,95 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "type": [
+                "integer"
+            ]
+        },
+        "code": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "name": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "product_type": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "unit_cost": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "stock": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "tax_class": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "kind": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "tax_type": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "tax_based_on": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "stripe_plan_id": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "paypal_interval_unit": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "paypal_interval_frequency": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "paypal_interval_duration": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "url": {
+            "type": [
+                "null",
+                "string"
+            ]
+        }
+    }
+}

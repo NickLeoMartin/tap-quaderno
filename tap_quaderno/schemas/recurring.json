@@ -236,18 +236,6 @@
                 "string"
             ]
         },
-        "tag_list": {
-            "type": [
-                "null",
-                "array"
-            ],
-            "items": {
-                "type": [
-                    "object"
-                ],
-                "properties": {}
-            }
-        },
         "url": {
             "type": [
                 "null",

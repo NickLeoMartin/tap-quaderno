@@ -1,0 +1,5 @@
+{
+    "api_key": "YOUR_API_KEY",
+    "start_date": "2020-01-01T00:00:00Z",
+    "user_agent": "tap-quaderno <api_user_email@your_company.com>"
+}

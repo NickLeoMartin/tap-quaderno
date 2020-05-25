@@ -38,7 +38,7 @@ def write_schema(stream):
     singer.write_schema(stream.tap_stream_id, schema, stream.key_properties)
 
 
-def process_records(stream, mdata, max_modified, records, filter_field, fks):
+def process_records(stream, mdata, max_modified, records, filter_field):
     schema = stream.schema.to_dict()
     with metrics.record_counter(stream.tap_stream_id) as counter:
         for record in records:
@@ -68,7 +68,6 @@ def sync_endpoint(client, catalog, state, start_date, stream, mdata):
 
     stream_config = STEAM_CONFIGS[stream_name]
     filter_field = stream_config.get('filter_field')
-    foreign_keys = stream_config.get('fks', [])
 
     count = 1000
     offset = 0
@@ -91,11 +90,6 @@ def sync_endpoint(client, catalog, state, start_date, stream, mdata):
             'page': page_number
         }
 
-        # if stream_config.get('replication') == 'incremental':
-        #     query_params['filter[{}]'.format(
-        #         filter_field)] = '{}..inf'.format(paginate_datetime)
-        #     query_params['sort'] = filter_field
-
         message_template = '{} - Syncing data since {} - limit: {}, offset: {}'
         LOGGER.info(message_template.format(stream.tap_stream_id,
                                             last_datetime,
@@ -107,40 +101,41 @@ def sync_endpoint(client, catalog, state, start_date, stream, mdata):
             params=query_params,
             endpoint=stream_name)
 
-        # LOGGER.info(f'data: {data}')
-
         records = data
 
-        if page_number == 1:
-            total_pages = headers.get('X-Pages-TotalPages')
+        returned_total_pages = headers.get('X-Pages-TotalPages')
+        if (page_number == 1 and returned_total_pages):
 
-        # if len(records) < count:
-        #     has_more = False
-        # else:
-        #     offset += count
+            total_pages = returned_total_pages
+            message = (f'{stream.tap_stream_id} - '
+                       f'Total pages: {total_pages}')
+            LOGGER.info(message)
 
         max_modified = process_records(stream,
                                        mdata,
                                        max_modified,
                                        records,
-                                       filter_field,
-                                       foreign_keys)
+                                       filter_field)
 
         # Exit unless more pages exist
         has_more = False
-        if total_pages is not None:
-            current_page = headers.get('X-Pages-CurrentPage')
+        returned_current_page = headers.get('X-Pages-CurrentPage')
+        if (total_pages and returned_current_page):
 
-            if current_page < total_pages:
+            if int(returned_current_page) < int(total_pages):
+                message = (
+                    f'{stream.tap_stream_id} - '
+                    f'Synced page {returned_current_page} of {total_pages}')
+                LOGGER.info(message)
+
                 page_number += 1
                 has_more = True
 
-        # if offset > 10000:
-        #     paginate_datetime = max_modified
-        #     offset = 0
-
-        # if stream_config.get('replication') == 'incremental':
-        #     write_bookmark(state, stream_name, max_modified)
+        if has_more is False:
+            message = (
+                f'{stream.tap_stream_id} - '
+                f'Completed syncing all {total_pages} pages')
+            LOGGER.info(message)
 
 
 def update_current_stream(state, stream_name=None):

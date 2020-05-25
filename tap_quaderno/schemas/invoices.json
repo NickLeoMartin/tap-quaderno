@@ -1,0 +1,263 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "type": [
+                "integer"
+            ]
+        },
+        "number": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "issue_date": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "format": "date-time"
+        },
+        "created_at": {
+            "type": [
+                "null",
+                "integer"
+            ]
+        },
+        "contact": {
+            "type": [
+                "null",
+                "object"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "full_name": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                }
+            }
+        },
+        "street_line_1": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "street_line_2": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "city": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "region": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "postal_code": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "po_number": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "due_date": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "format": "date-time"
+        },
+        "currency": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "exchange_rate": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "items": {
+            "type": [
+                "array"
+            ],
+            "items": {
+                "type": [
+                    "object"
+                ],
+                "properties": {
+                    "id": {
+                        "type": [
+                            "null",
+                            "integer"
+                        ]
+                    },
+                    "description": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "quantity": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "unit_price": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "discount_rate": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "tax_1_name": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "tax_1_rate": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "tax_2_name": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "tax_2_rate": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "reference": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "subtotal": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "discount": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "gross_amount": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    }
+                }
+            }
+        },
+        "subtotal": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "discount": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "taxes": {
+            "type": [
+                "null",
+                "array"
+            ],
+            "items": {
+                "type": [
+                    "object"
+                ],
+                "properties": {
+                    "label": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "amount": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    }
+                }
+            }
+        },
+        "total": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "payment_details": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "notes": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "state": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "url": {
+            "type": [
+                "null",
+                "string"
+            ]
+        }
+    }
+}

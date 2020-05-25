@@ -4,6 +4,7 @@
 
 * Recurring
 * Items
+* Invoices
 
 ## Unsupported Endpoints
 

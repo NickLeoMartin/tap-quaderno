@@ -55,7 +55,7 @@
                 "id": {
                     "type": [
                         "null",
-                        "string"
+                        "integer"
                     ]
                 },
                 "full_name": {
@@ -84,6 +84,12 @@
                 "string"
             ]
         },
+        "subject": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
         "items": {
             "type": [
                 "array"
@@ -99,7 +105,19 @@
                             "integer"
                         ]
                     },
+                    "product_code": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
                     "description": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "reference": {
                         "type": [
                             "null",
                             "string"
@@ -111,13 +129,25 @@
                             "string"
                         ]
                     },
-                    "unit_price": {
+                    "unit_price_cents": {
                         "type": [
                             "null",
                             "string"
                         ]
                     },
                     "discount_rate": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "subtotal_cents": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "discount_cents": {
                         "type": [
                             "null",
                             "string"
@@ -132,10 +162,46 @@
                     "tax_1_rate": {
                         "type": [
                             "null",
+                            "number"
+                        ]
+                    },
+                    "tax_1_country": {
+                        "type": [
+                            "null",
                             "string"
                         ]
                     },
-                    "tax_2_name": {
+                    "tax_1_region": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "tax_1_county": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "tax_1_city": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "tax_1_county_code": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "tax_1_city_code": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "tax_1_transaction_type": {
                         "type": [
                             "null",
                             "string"
@@ -144,28 +210,52 @@
                     "tax_2_rate": {
                         "type": [
                             "null",
-                            "string"
+                            "number"
                         ]
                     },
-                    "reference": {
+                    "tax_2_country": {
                         "type": [
                             "null",
                             "string"
                         ]
                     },
-                    "subtotal": {
+                    "tax_2_region": {
                         "type": [
                             "null",
                             "string"
                         ]
                     },
-                    "discount": {
+                    "tax_2_county": {
                         "type": [
                             "null",
                             "string"
                         ]
                     },
-                    "gross_amount": {
+                    "tax_2_city": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "tax_2_county_code": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "tax_2_city_code": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "tax_2_transaction_type": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "gross_amount_cents": {
                         "type": [
                             "null",
                             "string"
@@ -211,10 +301,10 @@
                 }
             }
         },
-        "total": {
+        "total_cents": {
             "type": [
                 "null",
-                "string"
+                "integer"
             ]
         },
         "payment_details": {

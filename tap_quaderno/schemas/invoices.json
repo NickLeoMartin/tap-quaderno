@@ -26,6 +26,27 @@
                 "integer"
             ]
         },
+        "related_document": {
+            "type": [
+                "null",
+                "object"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": [
+                        "null",
+                        "integer"
+                    ]
+                },
+                "type": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                }
+            }
+        },
         "contact": {
             "type": [
                 "null",

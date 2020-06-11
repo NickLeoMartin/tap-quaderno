@@ -20,6 +20,8 @@ class RateLimitError(Exception):
 
 class QuadernoClient(object):
 
+    API_VERSION = '20170914'
+
     def __init__(self, config):
         self.__user_agent = config.get('user_agent')
         self.__api_key = config.get('api_key')
@@ -74,6 +76,9 @@ class QuadernoClient(object):
 
         # https://developers.quaderno.io/api/#making-a-request
         kwargs['headers']['Authorization'] = f'Basic {self.__api_key}'
+
+        kwargs['headers']['Accept'] = \
+            f'application/json; api_version={self.API_VERSION}'
 
         if self.__user_agent:
             kwargs['headers']['User-Agent'] = self.__user_agent

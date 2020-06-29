@@ -18,6 +18,10 @@ STEAM_CONFIGS = {
     'invoices': {
         'url_path': 'invoices.json',
         'replication': 'full'
+    },
+    'estimates': {
+        'url_path': 'estimates.json',
+        'replication': 'full'
     }
 }
 

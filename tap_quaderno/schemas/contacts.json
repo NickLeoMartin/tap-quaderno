@@ -1,0 +1,142 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "type": [
+                "integer"
+            ]
+        },
+        "kind": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "created_at": {
+            "type": [
+                "integer"
+            ]
+        },
+        "full_name": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "contact_person": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "contact_name": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "department": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "street_line_1": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "street_line_2": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "postal_code": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "city": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "region": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "country": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "phone_1": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "email": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "web": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "discount": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "tax_id": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "language": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "notes": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "secure_id": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "permalink": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "url": {
+            "type": [
+                "null",
+                "string"
+            ]
+        }
+    }
+}

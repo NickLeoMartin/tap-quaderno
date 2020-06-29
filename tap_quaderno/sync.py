@@ -22,6 +22,10 @@ STEAM_CONFIGS = {
     'estimates': {
         'url_path': 'estimates.json',
         'replication': 'full'
+    },
+    'contacts': {
+        'url_path': 'contacts.json',
+        'replication': 'full'
     }
 }
 

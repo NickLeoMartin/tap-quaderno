@@ -26,6 +26,10 @@ STEAM_CONFIGS = {
     'contacts': {
         'url_path': 'contacts.json',
         'replication': 'full'
+    },
+    'credits': {
+        'url_path': 'credits.json',
+        'replication': 'full'
     }
 }
 

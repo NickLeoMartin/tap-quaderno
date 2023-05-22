@@ -12,7 +12,7 @@ setup(name='tap-quaderno',
       py_modules=['tap_quaderno'],
       install_requires=[
           'backoff==1.8.0',
-          'requests==2.22.0',
+          'requests==2.31.0',
           'singer-python==5.8.0'
       ],
       entry_points='''
